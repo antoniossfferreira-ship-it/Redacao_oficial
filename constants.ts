@@ -116,9 +116,10 @@ export const DEFAULT_CHAPTERS: Chapter[] = [
         • Título (Memorando nº ___/ano/sigla)
         • Local e data
         • Destinatário
+        • Endereçamento
         • Assunto
         • Vocativo
-        • Texto (parágrafos numerados)
+        • Texto 
         • Fecho (Atenciosamente ou Respeitosamente)`
       },
       {
@@ -130,10 +131,11 @@ export const DEFAULT_CHAPTERS: Chapter[] = [
         • Título (Ofício nº ___/ano/sigla)
         • Local e data
         • Destinatário (tratamento + nome + cargo)
+        • Endereçamento
         • Assunto
         • Vocativo
-        • Texto (parágrafos numerados)
-        • Fecho
+        • Texto 
+        • Fecho (Atenciosamente ou Respeitosamente)
         • Assinatura e cargo`
       },
       {
@@ -165,6 +167,7 @@ export const DEFAULT_CHAPTERS: Chapter[] = [
         ❌ Uso incorreto de “o mesmo” para retomar pessoas (Ex: Chamei o diretor e o mesmo disse... → Errado).
         ❌ Frases longas, emocionais ou vagas.
         ❌ Falta de objetividade.
+        ❌ Evitar Gerúndio.
         ❌ Informações implícitas ou pouco claras.`
       },
       {
