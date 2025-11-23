@@ -2,6 +2,15 @@ import React, { useState } from 'react';
 import { Chapter } from '../types';
 import { ChevronRight, Award, User } from 'lucide-react';
 
+// ==================================================================================
+// ÁREA DE EDIÇÃO DA FOTO
+// ==================================================================================
+// Coloque o link da sua foto abaixo (dentro das aspas).
+// Pode ser um link de internet (https://...) ou um código Base64 (data:image/png...).
+// Deixei uma imagem de exemplo temporária.
+const PROFILE_IMAGE_URL = "https://i.postimg.cc/1XBKCt0L/katia-profile.png"; 
+// ==================================================================================
+
 interface HomeViewProps {
   chapters: Chapter[];
   onSelectChapter: (id: string) => void;
@@ -28,36 +37,36 @@ export const HomeView: React.FC<HomeViewProps> = ({ chapters, onSelectChapter })
       </div>
 
       {/* Card da Autora - Inserido parcialmente sobre o header */}
-      <div className="px-6 -mt-8 relative z-20 mb-8">
-        <div className="bg-white p-5 rounded-xl shadow-xl border border-gray-100 flex items-center gap-4">
+      <div className="px-6 -mt-10 relative z-20 mb-8">
+        <div className="bg-white p-5 rounded-xl shadow-xl border border-gray-100 flex items-center gap-5">
           <div className="relative shrink-0">
-            {/* Container da Imagem */}
-            <div className="w-16 h-16 rounded-full border-2 border-accent-500 shadow-md bg-official-50 overflow-hidden relative group">
+            {/* Container da Imagem aumentado para w-24 h-24 (96px) */}
+            <div className="w-24 h-24 rounded-full border-2 border-accent-500 shadow-md bg-official-50 overflow-hidden relative group">
               {!imageError ? (
                 <img 
-                  src="./katia-profile.png" 
+                  src={PROFILE_IMAGE_URL} 
                   alt="Prof. Kátia Dantas" 
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  style={{ filter: 'contrast(1.05) saturate(1.1) sepia(0.1)' }}
+                  style={{ filter: 'contrast(1.05) saturate(1.1)' }}
                   onError={() => setImageError(true)}
                 />
               ) : (
                 <div className="w-full h-full flex items-center justify-center bg-official-100 text-official-300">
-                  <User className="w-8 h-8" />
+                  <User className="w-10 h-10" />
                 </div>
               )}
             </div>
             
             {/* Badge de Verificado/Autoridade */}
-            <div className="absolute -bottom-1 -right-1 bg-accent-500 text-white p-1 rounded-full border-2 border-white shadow-sm">
-              <Award className="w-3 h-3" />
+            <div className="absolute bottom-0 right-0 bg-accent-500 text-white p-1.5 rounded-full border-2 border-white shadow-sm z-10">
+              <Award className="w-4 h-4" />
             </div>
           </div>
           
           <div>
-            <p className="text-[10px] font-bold text-accent-600 uppercase tracking-wider mb-0.5">Idealização e Conteúdo</p>
-            <h3 className="font-serif font-bold text-official-900 text-lg leading-none mb-1">Kátia Dantas</h3>
-            <p className="text-xs text-gray-500 leading-snug">Professora e Instrutora de Língua Portuguesa</p>
+            <p className="text-[10px] font-bold text-accent-600 uppercase tracking-wider mb-1">Idealização e Conteúdo</p>
+            <h3 className="font-serif font-bold text-official-900 text-xl leading-none mb-1.5">Kátia Dantas</h3>
+            <p className="text-sm text-gray-500 leading-snug">Professora e Instrutora de Língua Portuguesa</p>
           </div>
         </div>
       </div>
